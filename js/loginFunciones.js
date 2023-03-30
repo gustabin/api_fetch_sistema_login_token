@@ -66,12 +66,18 @@ function BuscarUsuario() {
                 'Tienes que cambiar el password',
                 'error',
               );
-
               // Asignar el valor al campo emailCambiarPassword
               localStorage.removeItem('bandera');
               document.getElementById('emailCambiarPassword').value =
                 respuesta.correo;
               MostrarCambiarPassword();
+            }
+            if (respuesta.error == 3) {
+              swal(
+                'Houston, tenemos un problema',
+                respuesta.mensaje + ' ' + respuesta.numero_error,
+                'error',
+              );
             }
           },
         });
@@ -112,6 +118,13 @@ function VerificarToken() {
             window.location.href = '../login/login.php';
           }, 4000);
         }
+        if (respuesta.error == 2) {
+          swal(
+            'Houston, tenemos un problema',
+            respuesta.mensaje + ' ' + respuesta.numero_error,
+            'error',
+          );
+        }
       },
     });
   }
@@ -139,10 +152,24 @@ function ResetearPassword() {
                 'error',
               );
             }
+            if (respuesta.error == 2) {
+              swal(
+                'Houston, tenemos un problema',
+                'Debe colocar un correo',
+                'error',
+              );
+            }
             if (respuesta.error == 3) {
               swal(
                 'Houston, tenemos un problema',
                 'Debe colocar un correo válido',
+                'error',
+              );
+            }
+            if (respuesta.error == 4) {
+              swal(
+                'Houston, tenemos un problema',
+                respuesta.mensaje + ' ' + respuesta.numero_error,
                 'error',
               );
             }
@@ -224,6 +251,13 @@ function IncluirUsuario() {
                 'error',
               );
             }
+            if (respuesta.error == 7) {
+              swal(
+                'Houston, tenemos un problema',
+                respuesta.mensaje + ' ' + respuesta.numero_error,
+                'error',
+              );
+            }
             if (respuesta.exito == 1) {
               window.location.href = 'login.php';
             }
@@ -290,6 +324,13 @@ function CambiarPassword() {
               swal(
                 'Houston, tenemos un problema',
                 'El campo password y el campo reescribir password no son iguales!',
+                'error',
+              );
+            }
+            if (respuesta.error == 7) {
+              swal(
+                'Houston, tenemos un problema',
+                respuesta.mensaje + ' ' + respuesta.numero_error,
                 'error',
               );
             }
