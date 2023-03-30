@@ -31,8 +31,8 @@ function RemoverToken() {
 }
 
 // url: '../../modulos/login/loginApi.php/auth',  BuscarUsuario POST
-// url: '../../modulos/login/loginApi.php/verificar', VerificarToken GET
-// url: '../../modulos/login/loginApi.php/resetear', ResetearPassword GET
+// url: '../../modulos/login/loginApi.php/verificar', VerificarToken GET -> POST
+// url: '../../modulos/login/loginApi.php/resetear', ResetearPassword GET -> POST
 // url: '../../modulos/login/loginApi.php/', IncluirUsuario POST
 // url: '../../modulos/login/loginApi.php/cambiar', CambiarPassword POST
 
@@ -44,7 +44,6 @@ function BuscarUsuario() {
       if ($('#formDefault').valid()) {
         $.ajax({
           type: 'POST',
-          // url: 'loginApi.php/auth',
           url: '../../modulos/login/loginApi.php/auth',
           dataType: 'json',
           data: $(this).serialize(),
@@ -126,7 +125,7 @@ function ResetearPassword() {
       if ($('#formRecuperar').valid()) {
         $('#barra').show();
         $.ajax({
-          type: 'GET',
+          type: 'POST',
           url: '../../modulos/login/loginApi.php/resetear',
           dataType: 'json',
           data: $(this).serialize(),
