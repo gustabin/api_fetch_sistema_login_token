@@ -27,7 +27,7 @@ function MostrarCambiarPassword() {
 
 function RemoverToken() {
   sessionStorage.removeItem('token');
-  window.location.href = '../../tools/logout.php';
+  window.location.href = 'tools/logout.php';
 }
 
 // url: '../../modulos/login/loginApi.php/auth',  BuscarUsuario POST
@@ -44,14 +44,14 @@ function BuscarUsuario() {
       if ($('#formDefault').valid()) {
         $.ajax({
           type: 'POST',
-          url: '../../modulos/login/loginApi.php/auth',
+          url: 'loginApi.php/auth',
           dataType: 'json',
           data: $(this).serialize(),
           success: function (respuesta) {
             console.log(respuesta);
             if (respuesta.exito == 1) {
               sessionStorage.setItem('token', respuesta.token);
-              window.location.href = '../tienda/tienda.php';
+              window.location.href = 'tienda.php';
             }
             if (respuesta.error == 1) {
               swal(
@@ -92,7 +92,7 @@ function VerificarToken() {
     const token = sessionStorage.getItem('token');
     $.ajax({
       type: 'GET',
-      url: '../../modulos/login/loginApi.php/verificar',
+      url: 'loginApi.php/verificar',
       dataType: 'json',
       data: $(this).serialize(),
       headers: {
@@ -115,7 +115,7 @@ function VerificarToken() {
           );
 
           setTimeout(function () {
-            window.location.href = '../login/login.php';
+            window.location.href = 'index.php';
           }, 4000);
         }
         if (respuesta.error == 2) {
@@ -139,7 +139,7 @@ function ResetearPassword() {
         $('#barra').show();
         $.ajax({
           type: 'POST',
-          url: '../../modulos/login/loginApi.php/resetear',
+          url: 'loginApi.php/resetear',
           dataType: 'json',
           data: $(this).serialize(),
           success: function (respuesta) {
@@ -201,7 +201,7 @@ function IncluirUsuario() {
         $('#barra').show();
         $.ajax({
           type: 'POST',
-          url: '../../modulos/login/loginApi.php/',
+          url: 'loginApi.php/',
           dataType: 'json',
           data: $(this).serialize(),
           success: function (respuesta) {
@@ -259,7 +259,7 @@ function IncluirUsuario() {
               );
             }
             if (respuesta.exito == 1) {
-              window.location.href = 'login.php';
+              window.location.href = 'index.php';
             }
           },
         });
@@ -277,7 +277,7 @@ function CambiarPassword() {
         $('#barra').show();
         $.ajax({
           type: 'POST',
-          url: '../../modulos/login/loginApi.php/cambiar',
+          url: 'loginApi.php/cambiar',
           dataType: 'json',
           data: $(this).serialize(),
           success: function (respuesta) {
@@ -337,7 +337,7 @@ function CambiarPassword() {
             if (respuesta.exito == 1) {
               swal('Password cambiado con exito!', 'Todo bien', 'success');
               setTimeout(function () {
-                window.location.href = 'login.php';
+                window.location.href = 'index.php';
               }, 2000);
             }
           },

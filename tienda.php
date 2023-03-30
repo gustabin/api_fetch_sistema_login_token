@@ -1,5 +1,5 @@
 <?php
-  include_once("../../tools/header.php");
+  include_once("tools/header.php");
   $page_title = "Tienda";
 ?>
 <div class="">
@@ -92,9 +92,9 @@
   </div>
 </div>
 
-<?php include_once("../../tools/footer.php"); ?>
+<?php include_once("tools/footer.php"); ?>
 
-<script src=<?php echo '../../js/loginFunciones.js' ?>></script>
+<script src=<?php echo 'loginFunciones.js' ?>></script>
 
 <script>
   VerificarToken();

@@ -10,16 +10,16 @@
 
   <!-- Agregar Sweet Alert -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script src="../../js/jquery.min.js"></script>
+  <script src="js/jquery.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script> -->
   <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.0/jquery.validate.min.js"></script>
-  <script src="../../js/bootstrap.bundle.min.js"></script>
-  <script src="../../js/jquery.dataTables.min.js"></script>
-  <script src="../../js/dataTables.bootstrap4.min.js"></script>
-  <script src="../../js/dataTables.responsive.min.js"></script>
-  <script src="../../js/responsive.bootstrap4.min.js"></script>
-  <script src="../../js/adminlte.min.js"></script>
-  <script src="../../js/demo.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.bootstrap4.min.js"></script>
+  <script src="js/dataTables.responsive.min.js"></script>
+  <script src="js/responsive.bootstrap4.min.js"></script>
+  <script src="js/adminlte.min.js"></script>
+  <script src="js/demo.js"></script>
   <script src="https://www.gustabin.com/store/assets/js/jquery.maskedinput.js"></script>
-
 </body>
 </html>

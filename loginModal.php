@@ -45,7 +45,7 @@
           
        <div style="display: flex; justify-content: center;">
           <span style="width: 200px !important; display:none" id="barra">
-              <img style="width: 206px" src="../../img/barra.gif" alt="Procesando..." />
+              <img style="width: 206px" src="img/barra.gif" alt="Procesando..." />
           </span>
           <div id="alerta" class="alert alert-success alert-dismissible fade show" role="alert" style="display:none" >
             <strong>¡Éxito!</strong> Le hemos enviado un email con las instrucciones para resetear su password.        

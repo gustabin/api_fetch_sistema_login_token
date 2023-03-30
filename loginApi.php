@@ -1,7 +1,5 @@
 <?php
 session_start();
-// header('Access-Control-Allow-Origin: *'); // cualquier origen
-// Configuración de la base de datos
 $dbHost = "localhost";
 $dbUser = "root";
 $dbPass = "";
@@ -320,7 +318,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $_SERVER['PATH_INFO'] === '/auth') 
             $data = array("exito" => '1', 'token' => $token);
             // Cerrar la consulta y la conexión a la base de datos
             $stmt->close();
-            $conn->close();
+            $conn->close();            
             die(json_encode($data));
         } else {
             // Si no se encuentra al usuario, regresa un error
